@@ -1,0 +1,6 @@
+*txt
+*.sql
+*.pdf
+*.db
+*.py
+!academy.sql

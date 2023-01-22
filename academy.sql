@@ -76,4 +76,32 @@ INSERT INTO "Teachers" VALUES (10, "Святослав", "Смирнов", "Пр
 INSERT INTO "Teachers" VALUES (11, "Никита", "Селезнев", "Профессор", 13500, "2012-11-02", 2412, 0, 1);
 INSERT INTO "Teachers" VALUES (12, "Елисей", "Дьяконов", "Ассистент", 3000, "2014-07-11", 2144, 1, 0);
 
+-- №1
+SELECT * FROM "Departments" 
+ORDER BY id DESC;
 
+SELECT * FROM "Departments" 
+ORDER BY "Name"; 
+
+-- №2
+SElECT "Name", "Rating" 
+FROM "Groups";
+
+SELECT * FROM "Groups" 
+ORDER BY "Rating";
+
+SELECT * FROM "Groups" 
+ORDER BY "Rating" DESC LIMIT 3;
+
+-- №5
+SElECT * FROM "Teachers" 
+WHERE "Salary" >1050 AND "IsProfessor" == 1;
+
+-- №6
+SElECT * FROM "Departments" 
+WHERE "Financing" >= 11600 and "Financing" <=25000 
+ORDER BY "Financing";
+
+-- №7
+SElECT * FROM "Faculties" 
+WHERE "Name" != "Комп'ютерних науки"; 
