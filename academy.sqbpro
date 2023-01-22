@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/Downloads/visual studio/home_works/piton/academy.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2168"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:mainsqlite_sequence"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="80"/><column index="2" value="40"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">DROP TABLE IF EXISTS &quot;Departments&quot;;
+
+CREATE TABLE &quot;Departments&quot; (
+	&quot;id&quot;	INTEGER NOT NULL UNIQUE,
+	&quot;Name&quot;	TEXT NOT NULL UNIQUE,
+	&quot;Financing&quot;	REAL NOT NULL DEFAULT 0,
+	PRIMARY KEY(&quot;id&quot; AUTOINCREMENT)
+);
+
+DROP TABLE IF EXISTS &quot;Faculties&quot;;
+
+CREATE TABLE &quot;Faculties&quot; (
+	&quot;id&quot;	INTEGER NOT NULL UNIQUE,
+	&quot;Name&quot;	TEXT NOT NULL UNIQUE,
+	&quot;Dean&quot;	TEXT NOT NULL,
+	PRIMARY KEY(&quot;id&quot; AUTOINCREMENT)
+);
+
+DROP TABLE IF EXISTS &quot;Groups&quot;;
+
+CREATE TABLE &quot;Groups&quot; (
+	&quot;id&quot;	INTEGER NOT NULL UNIQUE,
+	&quot;Name&quot;	TEXT NOT NULL UNIQUE,
+	&quot;Year&quot;	INTEGER NOT NULL,
+	&quot;Rating&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;id&quot; AUTOINCREMENT)
+);
+
+DROP TABLE IF EXISTS &quot;Teachers&quot;;
+
+CREATE TABLE &quot;Teachers&quot; (
+	&quot;id&quot;	INTEGER NOT NULL UNIQUE,
+	&quot;Name&quot;	TEXT NOT NULL,
+	&quot;Surname&quot;	TEXT NOT NULL,
+	&quot;Position&quot;	TEXT NOT NULL,
+	&quot;Salary&quot;	REAL NOT NULL,
+	&quot;EmploymentDate&quot;	TEXT NOT NULL,
+	&quot;Premium&quot;	REAL NOT NULL DEFAULT 0,
+	&quot;IsAssistant&quot;	INTEGER NOT NULL DEFAULT 0,
+	&quot;IsProfessor&quot;	INTEGER NOT NULL DEFAULT 0,
+	PRIMARY KEY(&quot;id&quot; AUTOINCREMENT)
+);
+
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Хімічної інженерії&quot;, 34233);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Комп'ютерних науки&quot;, 13241);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Інженерії&quot;, 14354);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Промислової інженерії&quot;, 56534);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Математики&quot;, 23453);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Медицини&quot;, 11534);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Физические науки&quot;, 23455);
+INSERT INTO &quot;Departments&quot; (Name, Financing) VALUES (&quot;Техника и технологии&quot;, 32435);
+
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Клінічна медицина&quot;, &quot;Ефимов Святослав&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Комп'ютерних науки&quot;, &quot;Николаев Матвей&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Гуманітарні та соціальні науки&quot;, &quot;Лукьянов Константин&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Фізичні науки&quot;, &quot;Иванов Илья&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Біологічні науки&quot;, &quot;Гуляев Андрей&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Физические науки&quot;, &quot;Гордей Федецкий&quot;);
+INSERT INTO &quot;Faculties&quot; (Name, Dean) VALUES ( &quot;Промислової інженерії&quot;, &quot;Лукьянов Константин&quot;);
+
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Компьютерных наук&quot;, 3, 1);
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Инженерний&quot;, 2, 9);
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Хімічної інженерії&quot;, 3, 2);
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Медицини&quot;, 5, 5);
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Фізичні науки&quot;, 4, 3);
+INSERT INTO &quot;Groups&quot; (Name, Year, Rating) VALUES (&quot;Техника и технологии&quot;, 4, 6);
+
+INSERT INTO &quot;Teachers&quot; VALUES (1, &quot;Платон&quot;, &quot;Лопатин&quot;, &quot;Профессор&quot;, 24324, &quot;2013-10-13&quot;, 1423, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (2, &quot;Адам&quot;, &quot;  Жданов&quot;, &quot;Ассистент&quot;, 32123, &quot;2027-09-14&quot;, 2345, 1, 0);
+INSERT INTO &quot;Teachers&quot; VALUES (3, &quot;Фёдор&quot;, &quot;Степанов&quot;, &quot;Ассистент&quot;, 41323, &quot;2013-03-23&quot;, 2452, 1, 0);
+INSERT INTO &quot;Teachers&quot; VALUES (4, &quot;Степан&quot;, &quot;Иванов&quot;, &quot;Ассистент&quot;, 32421, &quot;2017-05-20&quot;, 5423, 1, 0);
+INSERT INTO &quot;Teachers&quot; VALUES (5, &quot;Михаил&quot;, &quot;Савельев&quot;, &quot;Профессор&quot;, 43213, &quot;2013-09-21&quot;, 1245, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (6, &quot;Гордей&quot;, &quot;Федецкий&quot;, &quot;Ассистент&quot;, 13521, &quot;2017-07-01&quot;, 2453, 1, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (7, &quot;Иван&quot;, &quot;Попов&quot;, &quot;Профессор&quot;, 14630, &quot;2013-03-17&quot;, 2421, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (8, &quot;Яков&quot;, &quot;Алексеев&quot;, &quot;Ассистент&quot;, 4000, &quot;2017-05-06&quot;, 1245, 1, 0);
+INSERT INTO &quot;Teachers&quot; VALUES (9, &quot;Евгений&quot;, &quot;Коноплянка&quot;, &quot;Профессор&quot;, 14000, &quot;2013-02-03&quot;, 1241, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (10, &quot;Святослав&quot;, &quot;Смирнов&quot;, &quot;Профессор&quot;, 9500, &quot;2013-10-30&quot;, 653, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (11, &quot;Никита&quot;, &quot;Селезнев&quot;, &quot;Профессор&quot;, 13500, &quot;2012-11-02&quot;, 2412, 0, 1);
+INSERT INTO &quot;Teachers&quot; VALUES (12, &quot;Елисей&quot;, &quot;Дьяконов&quot;, &quot;Ассистент&quot;, 3000, &quot;2014-07-11&quot;, 2144, 1, 0);
+
+
+
+-- SELECT * FROM &quot;Departments&quot; 
+-- ORDER BY id DESC;
+-- 
+-- SELECT * FROM &quot;Departments&quot; 
+-- ORDER BY &quot;Name&quot;; 
+
+
+
+-- SELECT Name, Rating 
+-- FROM &quot;Groups&quot;;
+
+-- SELECT * FROM &quot;Groups&quot; 
+-- ORDER BY Rating DESC;
+
+-- SELECT * FROM &quot;Groups&quot; 
+-- ORDER BY &quot;Rating&quot;
+-- LIMIT 3;
+-- 
+-- 
+-- 
+-- 
+-- SELECT * FROM &quot;Teachers&quot; 
+-- WHERE Salary &gt;1050 AND IsProfessor == 1;
+-- 
+-- 
+-- 
+-- 
+-- SELECT * FROM &quot;Departments&quot; 
+-- WHERE Financing &gt;= 11600
+-- AND Financing &lt;=25000 
+-- ORDER BY &quot;Financing&quot;;
+
+-- 
+-- 
+-- 
+-- SELECT * FROM &quot;Faculties&quot; 
+-- WHERE Name != &quot;Комп'ютерних науки&quot;; </sql><current_tab id="0"/></tab_sql></sqlb_project>
