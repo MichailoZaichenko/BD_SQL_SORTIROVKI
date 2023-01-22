@@ -55,6 +55,8 @@ INSERT INTO "Faculties" (Name, Dean) VALUES ( "Комп'ютерних наук�
 INSERT INTO "Faculties" (Name, Dean) VALUES ( "Гуманітарні та соціальні науки", "Лукьянов Константин");
 INSERT INTO "Faculties" (Name, Dean) VALUES ( "Фізичні науки", "Иванов Илья");
 INSERT INTO "Faculties" (Name, Dean) VALUES ( "Біологічні науки", "Гуляев Андрей");
+INSERT INTO "Faculties" (Name, Dean) VALUES ( "Физические науки", "Гордей Федецкий");
+INSERT INTO "Faculties" (Name, Dean) VALUES ( "Промислової інженерії", "Лукьянов Константин");
 
 INSERT INTO "Groups" (Name, Year, Rating) VALUES ("Компьютерных наук", 3, 1);
 INSERT INTO "Groups" (Name, Year, Rating) VALUES ("Инженерний", 2, 9);
@@ -76,6 +78,7 @@ INSERT INTO "Teachers" VALUES (10, "Святослав", "Смирнов", "Пр
 INSERT INTO "Teachers" VALUES (11, "Никита", "Селезнев", "Профессор", 13500, "2012-11-02", 2412, 0, 1);
 INSERT INTO "Teachers" VALUES (12, "Елисей", "Дьяконов", "Ассистент", 3000, "2014-07-11", 2144, 1, 0);
 
+
 -- №1
 SELECT * FROM "Departments" 
 ORDER BY id DESC;
@@ -84,24 +87,26 @@ SELECT * FROM "Departments"
 ORDER BY "Name"; 
 
 -- №2
-SElECT "Name", "Rating" 
+SELECT Name, Rating 
 FROM "Groups";
 
 SELECT * FROM "Groups" 
-ORDER BY "Rating";
+ORDER BY Rating DESC;
 
 SELECT * FROM "Groups" 
-ORDER BY "Rating" DESC LIMIT 3;
+ORDER BY "Rating"
+LIMIT 3;
 
 -- №5
-SElECT * FROM "Teachers" 
-WHERE "Salary" >1050 AND "IsProfessor" == 1;
+SELECT * FROM "Teachers" 
+WHERE Salary >1050 AND IsProfessor == 1;
 
 -- №6
-SElECT * FROM "Departments" 
-WHERE "Financing" >= 11600 and "Financing" <=25000 
+SELECT * FROM "Departments" 
+WHERE Financing >= 11600
+AND Financing <=25000 
 ORDER BY "Financing";
 
 -- №7
-SElECT * FROM "Faculties" 
-WHERE "Name" != "Комп'ютерних науки"; 
+SELECT * FROM "Faculties" 
+WHERE Name != "Комп'ютерних науки"; 
