@@ -89,31 +89,31 @@ FROM "Departments"
 ORDER BY "Name"; 
 
 -- №2
-SELECT Name, Rating 
+SELECT Groups.Name, Groups.Rating 
 FROM "Groups";
 
-SELECT * 
+SELECT Groups.Name, Groups.Rating 
 FROM "Groups" 
 ORDER BY Rating DESC;
 
-SELECT * 
+SELECT Groups.Name, Groups.Rating 
 FROM "Groups" 
 ORDER BY "Rating"
 LIMIT 3;
 
 -- №5
-SELECT * 
+SELECT Teachers.Surname
 FROM "Teachers" 
-WHERE Salary >1050 AND IsProfessor == 1;
+WHERE IsProfessor == 1 AND Salary >1050;
 
 -- №6
-SELECT * 
+SELECT Departments.Name
 FROM "Departments" 
 WHERE Financing >= 11600
 AND Financing <=25000 
 ORDER BY "Financing";
 
 -- №7
-SELECT * 
+SELECT Faculties.Name
 FROM "Faculties" 
-WHERE Name != "Комп'ютерних науки"; 
+WHERE Name != "Комп'ютерних науки";
