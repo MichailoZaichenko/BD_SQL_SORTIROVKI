@@ -80,33 +80,40 @@ INSERT INTO "Teachers" VALUES (12, "Елисей", "Дьяконов", "Асси
 
 
 -- №1
-SELECT * FROM "Departments" 
+SELECT * 
+FROM "Departments" 
 ORDER BY id DESC;
 
-SELECT * FROM "Departments" 
+SELECT * 
+FROM "Departments" 
 ORDER BY "Name"; 
 
 -- №2
 SELECT Name, Rating 
 FROM "Groups";
 
-SELECT * FROM "Groups" 
+SELECT * 
+FROM "Groups" 
 ORDER BY Rating DESC;
 
-SELECT * FROM "Groups" 
+SELECT * 
+FROM "Groups" 
 ORDER BY "Rating"
 LIMIT 3;
 
 -- №5
-SELECT * FROM "Teachers" 
+SELECT * 
+FROM "Teachers" 
 WHERE Salary >1050 AND IsProfessor == 1;
 
 -- №6
-SELECT * FROM "Departments" 
+SELECT * 
+FROM "Departments" 
 WHERE Financing >= 11600
 AND Financing <=25000 
 ORDER BY "Financing";
 
 -- №7
-SELECT * FROM "Faculties" 
+SELECT * 
+FROM "Faculties" 
 WHERE Name != "Комп'ютерних науки"; 
